@@ -1,0 +1,266 @@
+:root {
+  --blue: hsl(246, 80%, 60%);
+  --light-red-work: hsl(15, 100%, 70%);
+  --light-blue-play: hsl(195, 74%, 62%);
+  --light-red-study: hsl(348, 100%, 68%);
+  --light-green-exercise: hsl(145, 58%, 55%);
+  --violet-social: hsl(264, 64%, 52%);
+  --soft-green-self-care: hsl(43, 84%, 65%);
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+  --font-size-card-titles: 18px ;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 100%;
+  justify-items: center;
+  overflow-y: auto;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+body .dashBoards {
+  width: 90%;
+  height: 95%;
+  display: grid;
+  grid-row-gap: 20px;
+  align-items: center;
+}
+body .dashBoards .top {
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 120px 50px;
+}
+body .dashBoards .top .profile {
+  background-color: var(--blue);
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+  border-radius: 10px;
+  align-items: center;
+  color: white;
+}
+body .dashBoards .top .profile p {
+  margin: 3px;
+}
+body .dashBoards .top .profile .reportedFor {
+  color: var(--desaturated-blue);
+  font-size: var(--font-size-card-titles);
+}
+body .dashBoards .top .profile .name {
+  font-size: 25px;
+}
+body .dashBoards .top .profile .image {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+body .dashBoards .top .profile .image img {
+  width: 60%;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+body .dashBoards .top .DWM {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-items: center;
+}
+body .dashBoards .top .DWM p {
+  display: inline-block;
+  margin: 0;
+  color: var(--desaturated-blue);
+  transition: 1s;
+}
+body .dashBoards .top .DWM .select {
+  color: var(--pale-blue);
+}
+body .dashBoards .top .DWM p:hover {
+  color: var(--pale-blue);
+}
+body .dashBoards .work {
+  background-color: var(--light-red-work);
+}
+body .dashBoards .play {
+  background-color: var(--light-blue-play);
+}
+body .dashBoards .study {
+  background-color: var(--light-red-study);
+}
+body .dashBoards .exercise {
+  background-color: var(--light-green-exercise);
+}
+body .dashBoards .social {
+  background-color: var(--violet-social);
+}
+body .dashBoards .self-care {
+  background-color: var(--soft-green-self-care);
+}
+body .dashBoards .card {
+  width: 100%;
+  min-height: 170px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+body .dashBoards .card .info {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  bottom: 0;
+  background-color: var(--dark-blue);
+  border-radius: 15px;
+  color: var(--pale-blue);
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+  justify-items: center;
+  transition: 0.5s;
+}
+body .dashBoards .card .info .timeAndTitle {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+body .dashBoards .card .info .timeAndTitle p, body .dashBoards .card .info .timeAndTitle h1 {
+  padding-left: 25%;
+  margin: 0;
+  display: grid;
+  height: 100%;
+}
+body .dashBoards .card .info .timeAndTitle p {
+  align-items: end;
+}
+body .dashBoards .card .info .dotsAndLasts {
+  width: 100%;
+  display: grid;
+}
+body .dashBoards .card .info .dotsAndLasts .dots, body .dashBoards .card .info .dotsAndLasts .lasts {
+  display: grid;
+  justify-content: end;
+  padding-right: 20px;
+}
+body .dashBoards .card .info .dotsAndLasts .dots {
+  align-items: end;
+  cursor: pointer;
+}
+body .dashBoards .card .card-ico {
+  position: absolute;
+  right: 0;
+  top: -10px;
+}
+body .attribution {
+  position: fixed;
+  z-index: 1;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+body .attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+@media screen and (min-width: 376px) {
+  body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 95vh 5vh;
+  }
+  body .dashBoards {
+    height: 70%;
+    width: 80%;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2, 50%);
+    grid-column-gap: 15px;
+    grid-template-areas: "profile work play study" "profile exercise social self-care";
+  }
+  body .dashBoards .top {
+    grid-area: profile;
+    height: 95%;
+    display: grid;
+    grid-template-rows: 60% 40%;
+  }
+  body .dashBoards .top .profile {
+    display: block;
+    grid-template-columns: 100%;
+    grid-template-rows: 170px;
+  }
+  body .dashBoards .top .profile .image {
+    margin-top: 10%;
+    width: 50%;
+  }
+  body .dashBoards .top .profile .profileInfo {
+    margin-top: 5%;
+    margin-left: 10%;
+    width: 70%;
+  }
+  body .dashBoards .top .DWM {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    justify-items: start;
+    margin-left: 10%;
+  }
+  body .dashBoards .top .DWM p {
+    cursor: default;
+  }
+  body .dashBoards .card {
+    height: 100%;
+  }
+  body .dashBoards .card .info {
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: "top" "bottom";
+  }
+  body .dashBoards .card .info .timeAndTitle {
+    display: unset;
+  }
+  body .dashBoards .card .info .timeAndTitle .title {
+    display: unset;
+    position: absolute;
+    top: 10%;
+    padding: 0;
+    left: 10%;
+    padding-left: 0;
+  }
+  body .dashBoards .card .info .timeAndTitle .hour {
+    display: unset;
+    padding-left: 0;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+  }
+  body .dashBoards .card .info .dotsAndLasts {
+    display: unset;
+  }
+  body .dashBoards .card .info .dotsAndLasts .dots img {
+    position: absolute;
+    right: 10%;
+    top: 15%;
+  }
+  body .dashBoards .card .info .dotsAndLasts .lasts .last {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+  }
+  body .dashBoards .card .info .title, body .dashBoards .card .info .dots {
+    display: inline-block;
+  }
+  body .attribution {
+    position: relative;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,336 @@
+:root{
+    --blue: hsl(246, 80%, 60%);
+
+    --light-red-work: hsl(15, 100%, 70%);
+    --light-blue-play: hsl(195, 74%, 62%);
+    --light-red-study: hsl(348, 100%, 68%);
+    --light-green-exercise: hsl(145, 58%, 55%);
+    --violet-social: hsl(264, 64%, 52%);
+    --soft-green-self-care: hsl(43, 84%, 65%);
+
+
+    //Netural
+
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+
+
+    //fonts
+    --font-size-card-titles: 18px
+
+}
+
+body{
+    background-color: var(--very-dark-blue);
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 100%;
+    justify-items: center;
+    overflow-y: auto;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    
+
+    .dashBoards{
+        width: 90%;
+        height: 95%;
+        display: grid;
+        grid-row-gap: 20px;
+        align-items: center;
+
+        .top{
+            background-color: var(--dark-blue);
+            border-radius: 10px;
+            display: grid;
+            grid-template-rows: 120px 50px;
+
+            .profile{
+                background-color: var(--blue);
+                display: grid;
+                grid-template-columns: 30% 70%;
+                grid-template-rows: 100%;
+                border-radius: 10px;
+                align-items: center;
+                color: white;
+
+                p{
+                    margin: 3px;
+                }
+
+                .reportedFor{
+                    color: var(--desaturated-blue);
+                    font-size: var(--font-size-card-titles);
+                }
+
+                .name{
+                    font-size: 25px;
+                }
+
+                .image{
+                    width: 100%;
+                    display: grid;
+                    align-items: center;
+                    justify-items: center;
+
+                    img{
+                        width: 60%;
+                        border: 3px solid white;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .DWM{
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(3,33.33%);
+                grid-template-rows: 100%;
+                align-items: center;
+                justify-items: center;
+    
+                p{
+                    display: inline-block;
+                    margin: 0;
+                    color: var(--desaturated-blue);
+                    transition: 1s;
+                }
+    
+                .select{
+                    color: var(--pale-blue);
+                }
+
+                p:hover {
+                    color: var(--pale-blue);
+                }
+    
+            }
+        }
+
+        .work{
+            background-color: var(--light-red-work);
+        }
+        
+        .play{
+            background-color: var(--light-blue-play);
+        }
+    
+        .study{
+            background-color: var(--light-red-study);
+        }
+    
+        .exercise{
+            background-color: var(--light-green-exercise);
+        }
+    
+        .social{
+            background-color: var(--violet-social);
+        }
+    
+        .self-care{
+            background-color: var(--soft-green-self-care);
+        }
+
+
+        .card{
+            width: 100%;
+            min-height: 170px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+
+            .info{
+                position: absolute;
+                width: 100%;
+                height: 80%;
+                bottom: 0;
+                background-color: var(--dark-blue);
+                border-radius: 15px;
+                color: var(--pale-blue);
+                z-index: 1;
+                display: grid;
+                grid-template-columns: 30% 70%;
+                grid-template-rows: 100%;
+                justify-items: center;
+                transition: 0.5s;
+
+                .timeAndTitle{
+                    width: 100%;
+                    height: 100%;
+                    display: grid;
+                    align-items: center;
+                    
+                    p, h1{
+                        padding-left: 25%;
+                        margin: 0;
+                        display: grid;
+                        height: 100%;
+                    }
+
+                    p{
+                        align-items: end;
+                    }
+                }
+
+                .dotsAndLasts{
+                    width: 100%;
+                    display: grid;
+
+                    .dots, .lasts{
+                        display: grid;
+                        justify-content: end;
+                        padding-right: 20px;
+                    }
+
+                    .dots{
+                        align-items: end;
+                        cursor: pointer;
+                    }
+                    
+                }
+                
+            }
+
+            .card-ico{
+                position: absolute;
+                right: 0;
+                top: -10px;
+            }
+        }
+    
+    
+        
+    }
+
+    .attribution { 
+        position: fixed;
+        z-index: 1;
+        font-size: 11px; text-align: center; 
+        color: white;
+        
+        a { 
+            color: hsl(228, 45%, 44%); 
+        }
+    }
+
+}
+
+@media screen and (min-width: 376px) {
+
+    body{
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        grid-template-rows: 95vh 5vh;
+
+        .dashBoards{
+            height: 70%;
+            width: 80%;
+            grid-template-columns: repeat(4, 25%);
+            grid-template-rows: repeat(2, 50%);
+            grid-column-gap: 15px;
+            grid-template-areas: 
+            "profile work play study"
+            "profile exercise social self-care";
+
+            .top{
+                grid-area: profile;
+                height: 95%;
+                display: grid;
+                grid-template-rows: 60% 40%;
+
+                .profile{
+                    display: block;
+                    grid-template-columns: 100%;
+                    grid-template-rows: 170px;
+
+                    .image{
+                        margin-top: 10%;
+                        width: 50%;
+                    }
+
+                    .profileInfo{
+                        margin-top: 5%;
+                        margin-left: 10%;
+                        width: 70%;
+                    }
+                }
+
+                .DWM{
+                    grid-template-columns: 100%;
+                    grid-template-rows: auto;
+                    justify-items: start;
+                    margin-left: 10%;
+
+                    p{
+                        cursor:default;
+                    }
+                }
+            }
+
+            .card{
+                height: 100%;
+
+                .info{
+                    grid-template-columns: 100%;
+                    grid-template-rows: 20% 80%;
+                    grid-template-areas:
+                    "top"
+                    "bottom" 
+                    ;
+                   
+                    .timeAndTitle{
+                        display: unset;
+
+                        .title{
+                            display: unset;
+                            position: absolute;
+                            top: 10%;
+                            padding: 0;
+                            left: 10%;
+                            padding-left: 0;
+                        }
+
+                        .hour{
+                            display: unset;
+                            padding-left: 0;
+                            position: absolute;
+                            top: 40%;
+                            left: 10%;
+                        }
+                    }
+
+                    .dotsAndLasts{
+                        display: unset;
+
+                        .dots img{
+                            position: absolute;
+                            right: 10%;
+                            top: 15%;
+                        }
+
+                        .lasts .last{
+                            position: absolute;
+                            bottom: 20%;
+                            left: 10%;
+                        }
+                    }
+
+                    .title, .dots{
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .attribution { 
+            position: relative;
+        }
+    
+    }        
+}
