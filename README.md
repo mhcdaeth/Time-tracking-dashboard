@@ -74,8 +74,8 @@ for (let p = 0 ; p <= options.length - 1; p++){
 
 ### Useful resources
 
-- [Example resource 1](https://www.w3schools.com) - This helped me for on any referance i'd need  I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.mdndocs.com) - This helped me for on any referance i'd need  I really liked this pattern and will use it going forward.
+- [W3Scholls](https://www.w3schools.com) - This helped me for on any referance i'd need  I really liked this pattern and will use it going forward.
+- [MDN Docs](https://www.mdndocs.com) - This helped me for on any referance i'd need  I really liked this pattern and will use it going forward.
 
 
 ## Author
